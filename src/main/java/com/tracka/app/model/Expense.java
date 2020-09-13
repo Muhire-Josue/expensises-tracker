@@ -3,6 +3,7 @@ package com.tracka.app.model;
 import java.time.Instant;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "expenses")
 public class Expense {
 
-	
+	@Id
 	private long id;
 	private String description;
 	private Instant expenseDate;
