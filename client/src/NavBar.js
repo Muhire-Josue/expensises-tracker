@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Nav, NavItem, NavbarBrand, Navbar, NavbarToggler, Collapse, NavLink, NavbarText} from 'reactstrap';
+import {Nav, NavItem, NavbarBrand, Navbar, NavLink} from 'reactstrap';
 
 export class NavBar extends Component {
     render() {
@@ -7,8 +7,6 @@ export class NavBar extends Component {
             <div>
                 <Navbar color="dark" light expand="md">
                         <NavbarBrand href="/">Expense Tracker</NavbarBrand>
-                        <NavbarToggler />
-                        <Collapse navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
                             <NavLink href="/home">Home</NavLink>
@@ -20,8 +18,6 @@ export class NavBar extends Component {
                             <NavLink href="/expenses">Expenses</NavLink>
                             </NavItem>
                         </Nav>
-                        <NavbarText>Simple Text</NavbarText>
-        </Collapse>
       </Navbar>
             </div>
         )
