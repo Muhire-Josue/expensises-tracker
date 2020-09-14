@@ -3,7 +3,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Container, Input, Button, Label, Form, FormGroup} from 'reactstrap' 
 import {Link} from 'react-router-dom';
-import Category from './Category';
 
 export class Expense extends Component {
     state ={
@@ -28,7 +27,6 @@ export class Expense extends Component {
             return (<div> Loading...</div>)
         }
 
-            let optionList=  categories.map(category => <div id={category.id}>{category.name}</div>)
         return (
             <div>
                 <Container />
@@ -38,9 +36,10 @@ export class Expense extends Component {
                         <Label for="title">Title</Label>
                         <Input type="text" name="title" id="title" onChange={this.handleChange}/>
                     </FormGroup>
-
                     <FormGroup>
-                        
+                    <select>
+                        {categories.map(category => <option id={category.id}>{category.name}</option>)}
+                    </select>
                     </FormGroup>
                     <FormGroup>
                         <Label for="expenseDate">Expense Date</Label>
