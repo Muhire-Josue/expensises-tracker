@@ -1,14 +1,15 @@
 package com.tracka.app.model;
 
-import java.time.Instant;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,9 +18,10 @@ import lombok.NoArgsConstructor;
 public class Expense {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String description;
-	private Instant expenseDate;
+	private String expenseDate;
 	private String location;
 	
 	
@@ -36,13 +38,13 @@ public class Expense {
 	public String getDescription() {
 		return description;
 	}
-	public void setDescription(String description) {	
+	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Instant getExpenseDate() {
+	public String getExpenseDate() {
 		return expenseDate;
 	}
-	public void setExpenseDate(Instant expenseDate) {
+	public void setExpenseDate(String expenseDate) {
 		this.expenseDate = expenseDate;
 	}
 	public String getLocation() {
@@ -51,18 +53,17 @@ public class Expense {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public Category getCategory() {
-		return category;
-	}
-	public void setCategory(Category category) {
-		this.category = category;
-	}
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
 }
