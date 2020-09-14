@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import {Nav, NavItem, NavbarBrand} from 'reactstrap';
+import {Nav, NavItem, NavbarBrand, Navbar, NavbarToggler, Collapse, NavLink, NavbarText} from 'reactstrap';
 
 export class NavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="dark" light expand="md">
                         <NavbarBrand href="/">Expense Tracker</NavbarBrand>
-                        <NavbarToggler onClick={toggle} />
-                        <Collapse isOpen={isOpen} navbar>
+                        <NavbarToggler />
+                        <Collapse navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
                             <NavLink href="/home">Home</NavLink>
