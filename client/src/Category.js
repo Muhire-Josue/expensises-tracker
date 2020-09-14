@@ -8,6 +8,7 @@ export class Category extends Component {
     async componentDidMount(){
         const response = await fetch('http://localhost:8080/api/category');
         const body = await response.json();
+        console.log('body', body)
         this.setState({categories: body, isLoading: false});
     }
     render() {
