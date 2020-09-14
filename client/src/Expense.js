@@ -5,12 +5,23 @@ import {Container, Input, Button, Label, Form, FormGroup} from 'reactstrap'
 import {Link} from 'react-router-dom';
 
 export class Expense extends Component {
-    state ={
-        date: new Date(),
-        expenses: [],
-        categories: [],
-        isLoading: true
+
+    emptyItem = {
+        id: '102',
+        expenseDate: '2020-09-09',
+        description: 'Hello from react',
+        location: 'react client',
+        categories: [1, 'Travel']
     }
+    constructor(props){
+        this.state ={
+            date: new Date(),
+            expenses: [],
+            categories: [],
+            isLoading: true
+        }
+    }
+    
     handleChange(){
 
     }
