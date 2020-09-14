@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tracka.app.model.Category;
 import com.tracka.app.model.Expense;
 import com.tracka.app.repository.CategoryRepository;
 import com.tracka.app.repository.ExpenseRepository;
@@ -51,8 +50,6 @@ public class ExpenseController {
 	
 	@PostMapping("/expenses")
 	ResponseEntity<Expense> createExpense(@RequestBody Expense expense) throws URISyntaxException{
-		
-		Category category = categoryRepository.findById(1L);
 		Expense result = expenseRepository.save(expense);
 		return ResponseEntity.created(new URI("/expense" + result.getId())).body(result);
 	}
